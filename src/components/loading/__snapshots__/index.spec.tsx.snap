@@ -2,9 +2,13 @@
 
 exports[`src/components/loading/index.tsx Render Loading component 1`] = `
 <div>
-  <img
-    alt="LinkedTeam"
-    src="test-file-stub"
-  />
+  <div
+    class="loading"
+  >
+    <img
+      alt="LinkedTeam"
+      src="test-file-stub"
+    />
+  </div>
 </div>
 `;
