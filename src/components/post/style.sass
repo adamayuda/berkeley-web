@@ -1,0 +1,63 @@
+@import "src/styles/colors.sass"
+@import "src/styles/device.sass"
+
+.post
+  margin-top: 10px
+  background-color: $background-color-white
+
+  .user
+    background-color: $background-color-white
+    padding: 0 16px
+    height: 60px
+    display: grid
+    align-items: center
+    grid-template-columns: 32px auto
+    gap: 10px
+
+    img
+      height: 32px
+      border-radius: 16px
+
+  .photo
+    width: 100%
+
+  .postContent
+    padding: 0 16px
+    background-color: $background-color-white
+
+    .actions
+      height: 40px
+      display: grid
+      align-items: center
+      grid-template-columns: auto auto
+
+      div
+        display: grid
+        grid-template-columns: 24px 24px 24px
+        gap: 16px
+
+      img
+        height: 24px
+        align-items: center
+
+        &:nth-child(2)
+          justify-self: right
+
+    .comments
+      padding: 10px 0
+      .comment
+        display: grid
+        grid-template-columns: auto 12px
+        align-items: center
+
+        span
+          margin-left: 10px
+
+        img
+          height: 12px
+
+@media (min-width: $breakpoint-laptop)
+  .post
+    border: 1px solid $border-color-grey
+    border-radius: 3px
+    margin-bottom: 60px

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/nav/index.tsx Render Nav component 1`] = `
+<div>
+  <nav>
+    <div
+      class="container"
+    >
+      <div
+        class="navGrid"
+      >
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`src/components/nav/index.tsx Render Theme component when darkMode is false 1`] = `
+<div>
+  <nav>
+    <div
+      class="container"
+    >
+      <div
+        class="navGrid"
+      >
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`src/components/nav/index.tsx Render Theme component when darkMode is false 2`] = `
+<div>
+  <nav>
+    <div
+      class="container"
+    >
+      <div
+        class="navGrid"
+      >
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+        <img
+          alt="LinkedTeam"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+  </nav>
+</div>
+`;

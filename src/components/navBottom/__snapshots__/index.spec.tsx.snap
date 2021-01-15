@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/components/navBottom/index.tsx Render NavBottom component 1`] = `
+<div>
+  <div
+    class="navBottom"
+  >
+    <div
+      class="navGrid"
+    >
+      <img
+        alt="LinkedTeam"
+        src="test-file-stub"
+      />
+      <img
+        alt="LinkedTeam"
+        src="test-file-stub"
+      />
+      <img
+        alt="LinkedTeam"
+        src="test-file-stub"
+      />
+      <img
+        alt="LinkedTeam"
+        src="test-file-stub"
+      />
+      <img
+        alt="LinkedTeam"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+</div>
+`;
