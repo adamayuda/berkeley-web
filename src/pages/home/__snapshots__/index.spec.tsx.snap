@@ -55,9 +55,6 @@ exports[`src/pages/home/index.tsx Render Home page 1`] = `
   <div
     class="home"
   >
-    <h1>
-      test
-    </h1>
     <div
       class="container"
     >
