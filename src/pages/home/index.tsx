@@ -86,6 +86,7 @@ export const Home: FC = () => {
       <Nav />
       {state.device.type === "mobile" && <NavBottom />}
       <div className="home">
+        <h1>Test</h1>
         <div className="container">
           <div className="posts">
             {posts?.map((post: IPost, index: number) => {
