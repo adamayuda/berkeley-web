@@ -1,4 +1,5 @@
 @import "src/styles/colors.sass"
+@import "src/styles/device.sass"
 
 nav
   position: fixed
@@ -22,3 +23,24 @@ nav
       &:nth-child(3)
         justify-self: right
 
+@media (min-width: $breakpoint-laptop)
+ nav
+    .navGrid
+      grid-template-columns: repeat(3, 1fr)
+
+      input
+        background-color: $background-color-white-light
+        justify-self: center
+        width: 215px
+        text-align: center
+        border: 1px solid $border-color-grey
+        border-radius: 3px
+      .rightActions
+        grid-template-columns: repeat(4, 24px)
+        gap: 20px
+        justify-content: right
+        display: grid
+
+        .profilePicture
+          border: 1px solid $border-color-grey
+          border-radius: 50%
