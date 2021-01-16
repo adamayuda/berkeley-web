@@ -13,73 +13,93 @@ export const Home: FC = () => {
 
   const [posts, setPosts] = useState<IPost[] | null>(null);
 
+  const fetchPosts = () => {
+    fetch("http://15.188.239.43:3010/posts", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDAyZGQwNDQxMzZlMDMxZDU2OTRiNzQiLCJpYXQiOjE2MTA4MDA1MDQsImV4cCI6MTY0MjMzNjUwNH0.nZwL5sHoBCUsM0YMQhTFRhESTNiU7OvRrCyo6ZEJ9R4",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setPosts(result);
+        console.error(result);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
   useEffect(() => {
-    setPosts([
-      {
-        user: {
-          picture: woman,
-          username: "Nicole Hamilton",
-        },
-        photo: dubai3,
-        likes: 12,
-        comments: [
-          {
-            username: "Nicole Hamilton",
-            content: "Hello World! 🙂",
-            createdAt: new Date(),
-          },
-          {
-            username: "Adam Kenny",
-            content: "How are you? 🥳",
-            createdAt: new Date(),
-          },
-        ],
-        createdAt: new Date(),
-      },
-      {
-        user: {
-          picture: woman,
-          username: "Nicole Hamilton",
-        },
-        photo: dubai3,
-        likes: 12,
-        comments: [
-          {
-            username: "Nicole Hamilton",
-            content: "Hello World! 🙂",
-            createdAt: new Date(),
-          },
-          {
-            username: "Adam Kenny",
-            content: "How are you? 🥳",
-            createdAt: new Date(),
-          },
-        ],
-        createdAt: new Date(),
-      },
-      {
-        user: {
-          picture: woman,
-          username: "Nicole Hamilton",
-        },
-        photo: dubai3,
-        likes: 12,
-        comments: [
-          {
-            username: "Nicole Hamilton",
-            content: "Hello World! 🙂",
-            createdAt: new Date(),
-          },
-          {
-            username: "Adam Kenny",
-            content: "How are you? 🥳",
-            createdAt: new Date(),
-          },
-        ],
-        createdAt: new Date(),
-      },
-    ]);
-  }, []);
+    fetchPosts();
+    // setPosts([
+    //   {
+    //     user: {
+    //       picture: woman,
+    //       username: "Nicole Hamilton",
+    //     },
+    //     photo: dubai3,
+    //     likes: 12,
+    //     comments: [
+    //       {
+    //         username: "Nicole Hamilton",
+    //         content: "Hello World! 🙂",
+    //         createdAt: new Date(),
+    //       },
+    //       {
+    //         username: "Adam Kenny",
+    //         content: "How are you? 🥳",
+    //         createdAt: new Date(),
+    //       },
+    //     ],
+    //     createdAt: new Date(),
+    //   },
+    //   {
+    //     user: {
+    //       picture: woman,
+    //       username: "Nicole Hamilton",
+    //     },
+    //     photo: dubai3,
+    //     likes: 12,
+    //     comments: [
+    //       {
+    //         username: "Nicole Hamilton",
+    //         content: "Hello World! 🙂",
+    //         createdAt: new Date(),
+    //       },
+    //       {
+    //         username: "Adam Kenny",
+    //         content: "How are you? 🥳",
+    //         createdAt: new Date(),
+    //       },
+    //     ],
+    //     createdAt: new Date(),
+    //   },
+    //   {
+    //     user: {
+    //       picture: woman,
+    //       username: "Nicole Hamilton",
+    //     },
+    //     photo: dubai3,
+    //     likes: 12,
+    //     comments: [
+    //       {
+    //         username: "Nicole Hamilton",
+    //         content: "Hello World! 🙂",
+    //         createdAt: new Date(),
+    //       },
+    //       {
+    //         username: "Adam Kenny",
+    //         content: "How are you? 🥳",
+    //         createdAt: new Date(),
+    //       },
+    //     ],
+    //     createdAt: new Date(),
+    //   },
+    // ]);
+  }, [useState]);
 
   return (
     <>
