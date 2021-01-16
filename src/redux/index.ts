@@ -1,8 +1,7 @@
 import { compose, createStore } from "redux";
-import thunk, { ThunkDispatch } from "redux-thunk";
 import { applyMiddleware } from "redux";
-
 import { mainReducer } from "src/redux/reducers";
+import thunk from "redux-thunk";
 
 const composeEnhancers =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,15 +18,12 @@ export const createMainStore = () => {
 
 export type StateInterface = ReturnType<typeof mainStore.getState>;
 
-export type ActionType = "UPDATE_DEVICE_TYPE" | "UPDATE_USER_INFO";
+export type ActionType =
+  | "UPDATE_DEVICE_TYPE"
+  | "UPDATE_USER_INFO"
+  | "UPDATE_POSTS";
 
 export interface Action<T> {
   type: ActionType;
   payload: Partial<T>;
 }
-
-export type Dispatch<A> = ThunkDispatch<
-  StateInterface,
-  Record<string, unknown>,
-  Action<A>
->;

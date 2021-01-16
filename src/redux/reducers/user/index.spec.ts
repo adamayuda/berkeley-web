@@ -12,6 +12,7 @@ describe("src/redux/reducers/user/index.ts", () => {
     expect(settingsState).toMatchObject<UserState>({
       username: "Adam",
       picture: "/picture/test.jpg",
+      token: "",
     });
   });
 });

@@ -1,12 +1,14 @@
-import { IPost, Post } from ".";
+import { Post } from ".";
 import dubai3 from "src/assets/jpg/dubai-3.jpg";
 import { render } from "@testing-library/react";
 import woman from "src/assets/jpg/woman.jpg";
 
 describe("src/components/post/index.tsx", () => {
   test("Render Post component", () => {
-    const post: IPost = {
+    const post = {
+      _id: "id",
       user: {
+        _id: "id",
         picture: woman,
         username: "Nicole Hamilton",
       },

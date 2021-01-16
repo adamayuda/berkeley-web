@@ -3,12 +3,14 @@ import { Action } from "src/redux";
 export interface UserState {
   username: string;
   picture: string;
+  token: string;
 }
 
 export const user = (
   state: UserState = {
     username: "",
     picture: "",
+    token: "",
   },
   action: Action<UserState>,
 ) => {

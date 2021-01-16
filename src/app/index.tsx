@@ -3,10 +3,12 @@ import "./style.sass";
 import React, { FC, Suspense, lazy, useEffect } from "react";
 
 import { Route, Switch } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { Loading } from "src/components/loading";
 import { StateInterface } from "src/redux";
+import { fetchPosts } from "src/redux/actions";
 
 const routes = [
   {
@@ -42,36 +44,10 @@ export const App: FC = () => {
     }
   };
 
-  const fetchUserInfo = () => {
-    fetch("https://jsonplaceholder.typicode.com/users/1", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        const { username } = result;
-        dispatch({
-          type: "UPDATE_USER_INFO",
-          payload: { username, picture: "ok" },
-        });
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-
   useEffect(() => {
     onResize();
-    window.addEventListener("resize", onResize);
-
-    fetchUserInfo();
-
-    return function cleanup() {
-      window.removeEventListener("resize", onResize);
-    };
-  }, [dispatch]);
+    dispatch(fetchPosts());
+  }, []);
 
   return (
     <Suspense fallback={<Loading />}>

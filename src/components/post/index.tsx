@@ -1,33 +1,15 @@
 import "src/components/post/style.sass";
 
 import React, { FC } from "react";
+import { PostState } from "src/redux/reducers/posts";
 import PropTypes from "prop-types";
 import bookmark from "src/assets/svg/bookmark.svg";
 import comment from "src/assets/svg/comment.svg";
 import heart from "src/assets/svg/heart.svg";
 import send from "src/assets/svg/send.svg";
 
-export interface IPost {
-  user: IUser;
-  photo: string;
-  likes: number;
-  comments: IComment[];
-  createdAt: Date;
-}
-
-export interface IComment {
-  username: string;
-  content: string;
-  createdAt: Date;
-}
-
-export interface IUser {
-  picture: string;
-  username: string;
-}
-
 interface IPostProps {
-  post: IPost;
+  post: PostState;
 }
 
 export const Post: FC<IPostProps> = ({ post }) => {
@@ -51,7 +33,7 @@ export const Post: FC<IPostProps> = ({ post }) => {
           <strong>{post.likes} likes</strong>
         </div>
         <div className="comments">
-          {post.comments.map((comment: IComment, index: number) => {
+          {post?.comments?.map((comment, index) => {
             return (
               <div key={`route-${index}`} className="comment">
                 <div>
