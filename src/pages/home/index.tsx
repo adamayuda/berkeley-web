@@ -4,9 +4,9 @@ import React, { FC, useEffect, useState } from "react";
 import { Nav } from "src/components/nav";
 import { NavBottom } from "src/components/navBottom";
 import { StateInterface } from "src/redux";
-import dubai3 from "src/assets/jpg/dubai-3.jpg";
+// import dubai3 from "src/assets/jpg/dubai-3.jpg";
 import { useSelector } from "react-redux";
-import woman from "src/assets/jpg/woman.jpg";
+// import woman from "src/assets/jpg/woman.jpg";
 
 export const Home: FC = () => {
   const state = useSelector<StateInterface, StateInterface>((state) => state);
